@@ -1,3 +1,9 @@
+# Softwares Used
+Angular CLI: 15.1.5
+Node: 18.14.0
+Package Manager: npm 9.4.2
+OS: win32 x64
+
 # RestaurentOrderingSystem
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.

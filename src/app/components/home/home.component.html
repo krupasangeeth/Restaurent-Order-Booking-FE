@@ -1,0 +1,23 @@
+<div class="container-fluid contiainerFluid">
+    <div class="row rowDiv">
+        <div class="col-md-6">
+            {{getCompanyDescription()}}
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+            <div class="w-50 my-5">
+                <form class="form-group" #loginForm = "ngForm" >
+                    <input type="text" placeholder="Mobile Number"
+                     class="form-control"
+                     ngModel
+                     required
+                     maxLength="10"
+                     minlength="10"
+                     MobileNumber
+                     value="----------"
+                     name="mobileNumber"/>
+                    <button  class="form-control btn btn-primary" (click)="onClick()">login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
