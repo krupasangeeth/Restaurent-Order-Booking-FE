@@ -23,9 +23,17 @@ constructor(private activatedRoute: ActivatedRoute,
   private httpclient : HttpClient,
   private dbService : DbService,
   private orderService : OrderService
-) {}
+) {
+  
+}
+
+getQuantityFromOrder(item : any){
+  const orderedItem = this.orderService.getOrder().items.get(item.id);
+  return orderedItem ? orderedItem.quantity : 0;
+}
 
 ngOnInit(): void {
+  
 }
 
 onQuantityChange(e:number, item:any) {

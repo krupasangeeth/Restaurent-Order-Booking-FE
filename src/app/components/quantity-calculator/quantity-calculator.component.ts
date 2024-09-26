@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-quantity-calculator',
@@ -8,7 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class QuantityCalculatorComponent {
 
   @Output('quantity') quantityEmitter: EventEmitter<number> = new EventEmitter();
-  private quantity: number = 0;
+  @Input('orderedQuantity') quantity!:number;
 
 
   quantityIncrease(){

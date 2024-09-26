@@ -1,17 +1,18 @@
 <div class="container">
+    <div class="row d-flex flex-row-reverse my-1">
+        <div class="col-md-2">
+            <button class="btn btn-success" (click)="onPlaceOrder()" [disabled]="!getTotalAmount()">Place Order</button>
+        </div>
+        <div class="col-md-2" *ngIf="getTotalAmount()">
+                Total Amount : &#8377; {{getTotalAmount()}} 
+        </div>
+    </div>
     <div class="row d-flex justify-content-around">
         <div class="card-deck">
             <div *ngFor="let category of categories; let i = index" class="card bg-success-subtle my-2" >
-                <div class="card-body" (click)="onCategorySelection(category)">
-                    <p class="card-text">
-                        {{category}}
-                    </p>
-                </div>  
-                <app-menu 
-                    *ngIf="selectedCategory === category"
-                    [category]="category" 
-                    >
-                </app-menu> 
+                <app-card
+                    [category]="category"
+                ></app-card>
             </div>
         </div>
     </div>

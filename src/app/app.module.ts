@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MobileNumberDirective } from './directives/mobile-number.directive';
 import { QuantityCalculatorComponent } from './components/quantity-calculator/quantity-calculator.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { QuantityCalculatorComponent } from './components/quantity-calculator/qu
     HeaderComponent,
     FooterComponent,
     MobileNumberDirective,
-    QuantityCalculatorComponent
+    QuantityCalculatorComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

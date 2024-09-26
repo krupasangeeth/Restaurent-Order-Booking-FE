@@ -12,7 +12,11 @@
                 <tr *ngFor="let item of getItems(); let i = index">
                     <td>{{item.name}}</td>
                     <td>{{item.price}}</td>
-                    <td><app-quantity-calculator (quantity) = "onQuantityChange($event, item)"/></td>
+                    <td><app-quantity-calculator
+                         (quantity) = "onQuantityChange($event, item)"
+                         [orderedQuantity]="getQuantityFromOrder(item)"
+                        />
+                    </td>
                 </tr>
             </tbody>
         </table>

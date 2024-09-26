@@ -1,1 +1,38 @@
-<p>payment works!</p>
+<div class="container-fluid">
+  <div class="d-flex flex-row-reverse">
+    <button class="btn btn-warning my-2" (click)="onAddMoreItems()">
+      Add More Items
+    </button>
+  </div>
+  <div class="row">
+    <table class="table table-borderless table-light">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of order.items.values()">
+          <td>{{ item.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>
+            {{ item.quantity }} &#8277; {{ item.price }} = &#8377;
+            {{ item.quantity * item.price }}
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>GST &#64; 7%</td>
+          <td>&#8377; {{ getGST() }}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="text-primary fw-bold">Grand Total</td>
+          <td class="text-primary fw-bold">&#8377; {{ getGrandTotal() }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
