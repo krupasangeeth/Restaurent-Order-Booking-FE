@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DbService } from 'src/app/services/db.service';
+import { ApiService } from 'src/app/services/api.service';
+import { DataService } from 'src/app/services/data.service';
 import { OrderService } from 'src/app/services/order.service';
 
 @Component({
@@ -12,12 +13,15 @@ export class CategoryComponent implements OnInit {
   categories:string[] = ['veg', 'non-veg', 'deserts'];
   selectedCategory !: string;
   constructor(private router: Router,
-    private dbService :DbService,
-    private orderService : OrderService
+    private apiService :ApiService,
+    private orderService : OrderService,
+    private dataService : DataService
   ){}
 
   ngOnInit(): void {
-    this.dbService.getApi('items');
+    this.apiService.getApi('items').subscribe((res:any)=>{
+      this.dataService.setdata(res,'items');
+  });
   }
   getTotalAmount() : number{
     return this.orderService.getOrder().totalAmount;

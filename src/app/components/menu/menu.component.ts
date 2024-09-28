@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { DbService } from 'src/app/services/db.service';
+import { ApiService } from 'src/app/services/api.service';
+import { DataService } from 'src/app/services/data.service';
 import { OrderService } from 'src/app/services/order.service';
 
 @Component({
@@ -14,15 +15,17 @@ export class MenuComponent implements OnInit {
   items !: any[];
 
 getItems():any[] {
-  return this.dbService.getData('items').filter((item : any)=>{
+  const items : [] = <[]>this.dataService.getData('items');
+  return items.filter((item : any)=>{
     return item.category == this.category;
   });
 }
 
 constructor(private activatedRoute: ActivatedRoute,
   private httpclient : HttpClient,
-  private dbService : DbService,
-  private orderService : OrderService
+  private apiService : ApiService,
+  private orderService : OrderService,
+  private dataService : DataService
 ) {
   
 }

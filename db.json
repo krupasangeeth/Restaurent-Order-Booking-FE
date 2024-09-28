@@ -43,5 +43,530 @@
       "category": "veg"
     }
   ],
-  "feedback": []
+  "feedback": [],
+  "order": [
+    {
+      "id": "d056",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1
+        },
+        {
+          "id": 1,
+          "name": "Chicken Biryani",
+          "price": "250",
+          "category": "non-veg",
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Mutton Biryani",
+          "price": "350",
+          "category": "non-veg",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 900,
+      "grandTotal": 963
+    },
+    {
+      "id": "dad2",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 2
+        },
+        {
+          "id": 1,
+          "name": "Chicken Biryani",
+          "price": "250",
+          "category": "non-veg",
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Mutton Biryani",
+          "price": "350",
+          "category": "non-veg",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 1050,
+      "grandTotal": 1123.5
+    },
+    {
+      "id": "46c5",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1
+        },
+        {
+          "id": 1,
+          "name": "Chicken Biryani",
+          "price": "250",
+          "category": "non-veg",
+          "quantity": 1
+        },
+        {
+          "id": 4,
+          "name": "Prawns Biryani",
+          "price": "550",
+          "category": "non-veg",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 1100,
+      "grandTotal": 1177
+    },
+    {
+      "id": "d589",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 1,
+          "name": "Chicken Biryani",
+          "price": "250",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 4,
+          "name": "Prawns Biryani",
+          "price": "550",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 3,
+          "name": "Fish Biryani",
+          "price": "450",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        }
+      ],
+      "totalAmount": 1550,
+      "grandTotal": 1658.5
+    },
+    {
+      "id": "b65a",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Being prepared"
+        },
+        {
+          "id": 2,
+          "name": "Mutton Biryani",
+          "price": "350",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 4,
+          "name": "Prawns Biryani",
+          "price": "550",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 3,
+          "name": "Fish Biryani",
+          "price": "450",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        }
+      ],
+      "totalAmount": 1650,
+      "grandTotal": 1765.5
+    },
+    {
+      "id": "13a3",
+      "items": [],
+      "totalAmount": 0,
+      "grandTotal": 0
+    },
+    {
+      "id": "eed4",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        }
+      ],
+      "totalAmount": 300,
+      "grandTotal": 321
+    },
+    {
+      "id": "a6a1",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        }
+      ],
+      "totalAmount": 300,
+      "grandTotal": 321
+    },
+    {
+      "id": "14eb",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 2,
+          "name": "Mutton Biryani",
+          "price": "350",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 4,
+          "name": "Prawns Biryani",
+          "price": "550",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 1,
+          "name": "Chicken Biryani",
+          "price": "250",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        }
+      ],
+      "totalAmount": 1450,
+      "grandTotal": 1551.5
+    },
+    {
+      "id": "b97a",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        }
+      ],
+      "totalAmount": 300,
+      "grandTotal": 321
+    },
+    {
+      "id": "4207",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 1,
+          "name": "Chicken Biryani",
+          "price": "250",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        }
+      ],
+      "totalAmount": 550,
+      "grandTotal": 588.5
+    },
+    {
+      "id": "c0f6",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 2,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 1,
+          "name": "Chicken Biryani",
+          "price": "250",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 2,
+          "name": "Mutton Biryani",
+          "price": "350",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 4,
+          "name": "Prawns Biryani",
+          "price": "550",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        }
+      ],
+      "totalAmount": 1600,
+      "grandTotal": 1712
+    },
+    {
+      "id": "4c5e",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 1,
+          "name": "Chicken Biryani",
+          "price": "250",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        }
+      ],
+      "totalAmount": 550,
+      "grandTotal": 588.5
+    },
+    {
+      "id": "270d",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 1,
+          "name": "Chicken Biryani",
+          "price": "250",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 4,
+          "name": "Prawns Biryani",
+          "price": "550",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        }
+      ],
+      "totalAmount": 1100,
+      "grandTotal": 1177
+    },
+    {
+      "id": "dcc7",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        }
+      ],
+      "totalAmount": 300,
+      "grandTotal": 321
+    },
+    {
+      "id": "f257",
+      "items": [
+        {
+          "id": 5,
+          "name": "veg Biryani",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 6,
+          "name": "veg Pulav",
+          "price": "150",
+          "category": "veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        },
+        {
+          "id": 1,
+          "name": "Chicken Biryani",
+          "price": "250",
+          "category": "non-veg",
+          "quantity": 1,
+          "itemStatus": "Yet to prepare"
+        }
+      ],
+      "totalAmount": 550,
+      "grandTotal": 588.5
+    }
+  ]
 }
