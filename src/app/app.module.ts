@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MobileNumberDirective } from './directives/mobile-number.directive';
 import { QuantityCalculatorComponent } from './components/quantity-calculator/quantity-calculator.component';
 import { CardComponent } from './components/card/card.component';
+import { OrderStatusComponent } from './components/order-status/order-status.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CardComponent } from './components/card/card.component';
     FooterComponent,
     MobileNumberDirective,
     QuantityCalculatorComponent,
-    CardComponent
+    CardComponent,
+    OrderStatusComponent
   ],
   imports: [
     BrowserModule,

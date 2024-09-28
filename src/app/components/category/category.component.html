@@ -1,11 +1,9 @@
 <div class="container">
-    <div class="row d-flex flex-row-reverse my-1">
-        <div class="col-md-2">
-            <button class="btn btn-success" (click)="onPlaceOrder()" [disabled]="!getTotalAmount()">Place Order</button>
+    <div class="d-flex justify-content-end m-2">
+        <div *ngIf="getTotalAmount()" class="m-1">
+            Total Bill : &#8377; {{getTotalAmount()}} 
         </div>
-        <div class="col-md-2" *ngIf="getTotalAmount()">
-                Total Amount : &#8377; {{getTotalAmount()}} 
-        </div>
+        <button class="btn btn-success m-1" (click)="onPlaceOrder()" [disabled]="!getTotalAmount()">Place Order</button>
     </div>
     <div class="row d-flex justify-content-around">
         <div class="card-deck">
