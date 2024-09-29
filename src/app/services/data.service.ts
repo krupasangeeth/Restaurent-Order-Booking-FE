@@ -13,6 +13,7 @@ export class DataService {
   }
 
   setdata(res :any, uri : string){
+    console.log(res)
     this.data = {...this.data, [uri]: res}
   }
 }

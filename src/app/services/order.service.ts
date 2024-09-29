@@ -6,21 +6,21 @@ export enum ItemStatus {
   PREPARED = 'Prepared'
 }
 export class Item {
-  id: number;
+  menuItemId: number;
   name: string;
   price: number;
   category: string;
   quantity: number;
   itemStatus: ItemStatus;
   constructor(
-    id: number,
+    menuItemId: number,
     name: string,
     price: number,
     category: string,
     quantity: number,
     itemStatus: ItemStatus
   ) {
-    this.id = id;
+    this.menuItemId = menuItemId;
     this.name = name;
     this.price = price;
     this.category = category;
@@ -54,16 +54,16 @@ export class OrderService {
   // argument Quantity is either +1 or -1 which indicates increamented or decremented
   updateOrder(item: any, quantity: any) {
     let orderItem: Item;
-    const orderItemTemp = this.order.items.get(item.id);
+    const orderItemTemp = this.order.items.get(item.menuItemId);
 
     if (orderItemTemp) {
       orderItemTemp.quantity += quantity;
       if (orderItemTemp.quantity == 0) {
-        this.order.items.delete(item.id);
+        this.order.items.delete(item.menuItemId);
       }
     } else {
-      orderItem = new Item(item.id, item.name, item.price, item.category, 1, ItemStatus.YET_TO_PREPARE);
-      this.order.items.set(item.id, orderItem);
+      orderItem = new Item(item.menuItemId, item.name, item.price, item.category, 1, ItemStatus.YET_TO_PREPARE);
+      this.order.items.set(item.menuItemId, orderItem);
     }
     this.order.totalAmount += quantity * item.price;
     this.order.grandTotal = this.order.totalAmount * 1.07;
