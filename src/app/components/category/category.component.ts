@@ -7,27 +7,28 @@ import { OrderService } from 'src/app/services/order.service';
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent implements OnInit {
-  categories:string[] = ['veg', 'non-veg', 'deserts'];
-  selectedCategory !: string;
-  constructor(private router: Router,
-    private apiService :ApiService,
-    private orderService : OrderService,
-    private dataService : DataService
-  ){}
+  categories: string[] = ['veg', 'non-veg', 'deserts'];
+  selectedCategory!: string;
+  constructor(
+    private router: Router,
+    private apiService: ApiService,
+    private orderService: OrderService,
+    private dataService: DataService
+  ) {}
 
   ngOnInit(): void {
-    this.apiService.getApi('items').subscribe((res:any)=>{
-      this.dataService.setdata(res,'items');
-  });
+    this.apiService.getApi('menuitems').subscribe((res: any) => {
+      this.dataService.setdata(res, 'items');
+      console.log(res);
+    });
   }
-  getTotalAmount() : number{
+  getTotalAmount(): number {
     return this.orderService.getOrder().totalAmount;
   }
-  onPlaceOrder(){
+  onPlaceOrder() {
     this.router.navigate(['/payment']);
   }
-  
 }
