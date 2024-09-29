@@ -17,6 +17,7 @@ import { MobileNumberDirective } from './directives/mobile-number.directive';
 import { QuantityCalculatorComponent } from './components/quantity-calculator/quantity-calculator.component';
 import { CardComponent } from './components/card/card.component';
 import { OrderStatusComponent } from './components/order-status/order-status.component';
+import { PortalComponent } from './components/portal/portal.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { OrderStatusComponent } from './components/order-status/order-status.com
     MobileNumberDirective,
     QuantityCalculatorComponent,
     CardComponent,
-    OrderStatusComponent
+    OrderStatusComponent,
+    PortalComponent
   ],
   imports: [
     BrowserModule,
