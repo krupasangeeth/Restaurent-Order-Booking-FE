@@ -21,7 +21,7 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.getApi('menuitems').subscribe((res: any) => {
-      this.dataService.setdata(res, 'items');
+      this.dataService.setdata(res, 'menuitems');
       console.log(res);
     });
   }

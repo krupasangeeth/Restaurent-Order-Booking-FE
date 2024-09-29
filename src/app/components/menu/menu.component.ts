@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
   items !: any[];
 
 getItems():any[] {
-  const items : [] = <[]>this.dataService.getData('items');
+  const items : [] = <[]>this.dataService.getData('menuitems');
   return items.filter((item : any)=>{
     return item.category == this.category;
   });
@@ -31,7 +31,7 @@ constructor(private activatedRoute: ActivatedRoute,
 }
 
 getQuantityFromOrder(item : any){
-  const orderedItem = this.orderService.getOrder().items.get(item.id);
+  const orderedItem = this.orderService.getOrder().items.get(item.menuItemId);
   return orderedItem ? orderedItem.quantity : 0;
 }
 
