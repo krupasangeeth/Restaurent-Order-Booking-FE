@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -9,19 +10,26 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   @ViewChild('loginForm') loginForm!: NgForm;
-  constructor(private router: Router) {}
+  constructor(private router: Router, private apiservice: ApiService) {}
 
   ngOnInit(): void {
     console.log(this.loginForm);
   }
   onClick() {
     if (!this.loginForm.valid) return;
-    let res = 'ADMIN';
-    if (res === 'ADMIN') {
-      this.router.navigate(['/portal']);
-    } else if (res === 'USER') {
-      this.router.navigate(['/category']);
-    }
+    console.log(this.loginForm.controls['mobileNumber'].value)
+    const mobileNumber = this.loginForm.controls['mobileNumber'].value;
+    this.apiservice.postApi("login", parseInt(mobileNumber))
+    .subscribe(
+      (res) => {
+        console.log(res);
+        if (res.userRoleDto.role === 'ADMIN') {
+          this.router.navigate(['/portal']);
+        } else if (res.userRoleDto.role === 'USER') {
+          this.router.navigate(['/category']);
+        }
+      }
+    )
   }
 
   getCompanyDescription() {

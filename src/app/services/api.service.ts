@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -14,6 +14,10 @@ export class ApiService {
   }
 
   postApi(uri: string, body: any): Observable<any> {
-    return this.httpClient.post(this.url + uri, body);
+    return this.httpClient.post(this.url + uri, body, {headers:new HttpHeaders().append("Content-Type", "application/json")});
+  }
+
+  deleteApi(uri: string, body: any): Observable<any> {
+    return this.httpClient.delete(this.url + uri,{body: body, headers:new HttpHeaders().append("Content-Type", "application/json")});
   }
 }
