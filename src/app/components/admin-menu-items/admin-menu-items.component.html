@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row">
+        <table class="table table-borderless table-hover">
+            <thead class="table-warning">
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>        
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of MenuItems; let i = index">
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.category}}</td>
+                    <td><button class="btn btn-warning" (click)="onUpdate(item)">Update</button>
+                    <button class="btn btn-danger" (click)="onDelete(item.menuItemId)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

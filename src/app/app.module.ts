@@ -18,6 +18,8 @@ import { QuantityCalculatorComponent } from './components/quantity-calculator/qu
 import { CardComponent } from './components/card/card.component';
 import { OrderStatusComponent } from './components/order-status/order-status.component';
 import { PortalComponent } from './components/portal/portal.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AdminMenuItemsComponent } from './components/admin-menu-items/admin-menu-items.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { PortalComponent } from './components/portal/portal.component';
     QuantityCalculatorComponent,
     CardComponent,
     OrderStatusComponent,
-    PortalComponent
+    PortalComponent,
+    AdminDashboardComponent,
+    AdminMenuItemsComponent
   ],
   imports: [
     BrowserModule,
