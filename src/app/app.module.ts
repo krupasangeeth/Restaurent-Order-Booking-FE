@@ -20,6 +20,8 @@ import { OrderStatusComponent } from './components/order-status/order-status.com
 import { PortalComponent } from './components/portal/portal.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AdminMenuItemsComponent } from './components/admin-menu-items/admin-menu-items.component';
+import { CustModalComponent } from './components/cust-modal/cust-modal.component';
+import { ItemFormComponent } from './components/item-form/item-form.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { AdminMenuItemsComponent } from './components/admin-menu-items/admin-men
     OrderStatusComponent,
     PortalComponent,
     AdminDashboardComponent,
-    AdminMenuItemsComponent
+    AdminMenuItemsComponent,
+    CustModalComponent,
+    ItemFormComponent
   ],
   imports: [
     BrowserModule,

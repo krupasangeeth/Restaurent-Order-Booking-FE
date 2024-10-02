@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { DataService } from 'src/app/services/data.service';
 
@@ -8,9 +8,11 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./admin-menu-items.component.css']
 })
 export class AdminMenuItemsComponent implements OnInit {
-
+ @ViewChild('modal',{read:ViewContainerRef}) modal !: ViewContainerRef;
+  openModal : boolean = false
   constructor(private apiService : ApiService,
-    private dataService :DataService
+    private dataService :DataService,
+    private resolver : ComponentFactoryResolver
   ){}
   
   ngOnInit(): void {
@@ -30,6 +32,8 @@ export class AdminMenuItemsComponent implements OnInit {
 
   onUpdate(item : any){
     // this.apiService.postApi('menuitem',)
+    // this.resolver.resolveComponentFactory(item);
+    this.openModal = !this.openModal;
   }
 
   onDelete(id : number){

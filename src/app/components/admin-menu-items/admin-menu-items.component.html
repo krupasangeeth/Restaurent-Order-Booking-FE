@@ -1,23 +1,36 @@
 <div class="container-fluid">
     <div class="row">
-        <table class="table table-borderless table-hover">
-            <thead class="table-warning">
-                <tr>
-                    <th>Item</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                    <th>Actions</th>
-                </tr>        
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of MenuItems; let i = index">
-                    <td>{{item.name}}</td>
-                    <td>{{item.price}}</td>
-                    <td>{{item.category}}</td>
-                    <td><button class="btn btn-warning" (click)="onUpdate(item)">Update</button>
-                    <button class="btn btn-danger" (click)="onDelete(item.menuItemId)">Delete</button></td>
-                </tr>
-            </tbody>
-        </table>
+      <table class="table table-borderless table-hover">
+        <thead class="table-warning">
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th class="d-flex justify-content-around">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of MenuItems; let i = index">
+            <td>{{ item.name }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.category }}</td>
+            <td class="d-flex justify-content-around">
+              <i
+                class="bi bi-pencil-square text-primary"
+                (click)="onUpdate(item)"
+                data-bs-toggle="modal"
+                data-bs-target="#menuModal"
+              ></i>
+              <i
+                class="bi bi-trash text-danger"
+                (click)="onDelete(item.menuItemId)"
+              ></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</div>
+  </div>
+
+
+<app-cust-modal (closeEvent)="openModal=false" *ngIf="openModal"  #modal><app-item-form></app-item-form></app-cust-modal>

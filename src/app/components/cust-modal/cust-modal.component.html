@@ -1,0 +1,26 @@
+<div class="modal-backdrop">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ "edit menu item from modal" }}</h5>
+                <button
+                  type="button"
+                  class="btn-close bg-black"
+                  aria-label="Close"
+                  (click)="close()"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <!-- <ng-template dynamicContent></ng-template> -->
+                <!-- <ng-template appModalHost></ng-template> -->
+                <!-- This is where dynamic content will be injected -->
+                <ng-content> </ng-content>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="close()">
+                  Close
+                </button>
+              </div>
+        </div>
+    </div>
+</div>

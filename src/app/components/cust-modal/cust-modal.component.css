@@ -1,0 +1,37 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040; /* Set a high z-index for the backdrop */
+  }
+  
+  .modal-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 600px;
+    border-radius: 5px;
+    z-index: 1050; /* Higher than the backdrop */
+  }
+  
+  .modal-content {
+    padding: 20px;
+  }
+  
+  .modal-header,
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn-close {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
