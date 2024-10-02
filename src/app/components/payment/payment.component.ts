@@ -29,13 +29,15 @@ export class PaymentComponent {
   }
 
   onConfirmOrder() {
+    console.log(this.orderService.getOrderJson())
+
     this.apiService.postApi('order', this.orderService.getOrderJson()).subscribe(
       (res) => {
-        console.log("oreder saved");
+        console.log("order saved");
         this.router.navigate(['/orderstatus'])
       },
       (error) => {console.log(error)}
     )
-    console.log(this.orderService.getOrderJson())
+
   }
 }

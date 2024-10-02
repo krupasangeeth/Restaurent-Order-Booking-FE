@@ -8,11 +8,11 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./admin-menu-items.component.css']
 })
 export class AdminMenuItemsComponent implements OnInit {
- @ViewChild('modal',{read:ViewContainerRef}) modal !: ViewContainerRef;
-  openModal : boolean = false
+//  @ViewChild('modal',{read:ViewContainerRef}) modal !: ViewContainerRef;
+  openModal : boolean = false;
   constructor(private apiService : ApiService,
     private dataService :DataService,
-    private resolver : ComponentFactoryResolver
+    private resolver : ComponentFactoryResolver,
   ){}
   
   ngOnInit(): void {
@@ -33,7 +33,7 @@ export class AdminMenuItemsComponent implements OnInit {
   onUpdate(item : any){
     // this.apiService.postApi('menuitem',)
     // this.resolver.resolveComponentFactory(item);
-    this.openModal = !this.openModal;
+    this.openModal=true;
   }
 
   onDelete(id : number){

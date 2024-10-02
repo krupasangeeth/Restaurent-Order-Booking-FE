@@ -33,4 +33,6 @@
   </div>
 
 
-<app-cust-modal (closeEvent)="openModal=false" *ngIf="openModal"  #modal><app-item-form></app-item-form></app-cust-modal>
+<app-cust-modal [openModal]="openModal" (closeEvent)="openModal = false">
+    <app-item-form ></app-item-form>
+</app-cust-modal>

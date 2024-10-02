@@ -14,10 +14,10 @@ export class ApiService {
   }
 
   postApi(uri: string, body: any): Observable<any> {
-    return this.httpClient.post(this.url + uri, body, {headers:new HttpHeaders().append("Content-Type", "application/json")});
+    return this.httpClient.post(this.url + uri, body);
   }
 
   deleteApi(uri: string, body: any): Observable<any> {
-    return this.httpClient.delete(this.url + uri,{body: body, headers:new HttpHeaders().append("Content-Type", "application/json")});
+    return this.httpClient.delete(this.url + uri,{body: body});
   }
 }

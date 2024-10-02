@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit {
     .subscribe(
       (res) => {
         console.log(res);
+        sessionStorage.setItem("mobile",res.mobile.toString());
+        sessionStorage.setItem("role",res.userRoleDto.role);
         if (res.userRoleDto.role === 'ADMIN') {
           this.router.navigate(['/portal']);
         } else if (res.userRoleDto.role === 'USER') {

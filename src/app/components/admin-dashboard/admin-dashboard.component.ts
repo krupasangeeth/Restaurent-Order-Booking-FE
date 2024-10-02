@@ -15,5 +15,8 @@ export class AdminDashboardComponent {
 
   onclickMenuItems(){
     this.router.navigate(['/adminmenuitems']);
+  }  
+  onclickOrders(){
+    this.router.navigate(['/adminorders']);
   }
 }

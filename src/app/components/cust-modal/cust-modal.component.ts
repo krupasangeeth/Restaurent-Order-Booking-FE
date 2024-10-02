@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cust-modal',
@@ -7,7 +7,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class CustModalComponent {
   @Output('closeEvent') closeEvent : EventEmitter<any> = new EventEmitter(); 
+  @Input('openModal') openModal : boolean = false;
+  constructor(){}
+
   close(){
-    this.closeEvent.emit();
+    this.closeEvent.emit()
   }
+
 }

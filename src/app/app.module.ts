@@ -12,7 +12,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MobileNumberDirective } from './directives/mobile-number.directive';
 import { QuantityCalculatorComponent } from './components/quantity-calculator/quantity-calculator.component';
 import { CardComponent } from './components/card/card.component';
@@ -22,6 +22,8 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { AdminMenuItemsComponent } from './components/admin-menu-items/admin-menu-items.component';
 import { CustModalComponent } from './components/cust-modal/cust-modal.component';
 import { ItemFormComponent } from './components/item-form/item-form.component';
+import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
+import { LoginUserIntercepterService } from './interceptors/login-user-intercepter.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { ItemFormComponent } from './components/item-form/item-form.component';
     AdminDashboardComponent,
     AdminMenuItemsComponent,
     CustModalComponent,
-    ItemFormComponent
+    ItemFormComponent,
+    AdminOrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,13 @@ import { ItemFormComponent } from './components/item-form/item-form.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : LoginUserIntercepterService,
+      multi : true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

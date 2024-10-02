@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
+import { MenuItemDto, OrderDto, OrderItemDto, UserDto, UserRoleDto } from '../models/models';
 
 export enum ItemStatus {
   YET_TO_PREPARE = 'Yet to prepare',
   BEING_PREPARED = 'Being prepared...',
   PREPARED = 'Prepared'
 }
+
+
+
 export class Item {
   menuItemId: number;
   name: string;
@@ -73,6 +77,18 @@ export class OrderService {
 
   getOrderJson() {
     const items = [...this.order.items.values()];
-    return {items,totalAmount: this.order.totalAmount, grandTotal: this.order.grandTotal };
+    const orderItemsDto : OrderItemDto[] = [];
+    items.forEach((item) => {
+      const menuItemDto: MenuItemDto = new MenuItemDto(item.menuItemId,item.price,item.category,item.name);
+      const tempOrderItemDto : OrderItemDto = new OrderItemDto(menuItemDto,item.quantity);
+      orderItemsDto.push(tempOrderItemDto);
+    })
+    // const orderItemDto : OrderItemDto = new OrderItemDto(1,menuItemsDto,this.)
+    const userRoleDto : UserRoleDto =  new UserRoleDto(10001,'ADMIN');
+    const userDto : UserDto = new UserDto(8499858,userRoleDto);
+    const placeorder : OrderDto = new OrderDto(userDto,orderItemsDto,this.order.totalAmount);
+    console.log(placeorder);
+    return placeorder;
+    // return {items,totalAmount: this.order.totalAmount, grandTotal: this.order.grandTotal };
   }
 }

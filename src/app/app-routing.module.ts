@@ -8,6 +8,7 @@ import { OrderStatusComponent } from './components/order-status/order-status.com
 import { PortalComponent } from './components/portal/portal.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AdminMenuItemsComponent } from './components/admin-menu-items/admin-menu-items.component';
+import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'portal', component: PortalComponent },
   { path: 'admindashboard', component: AdminDashboardComponent },
   { path: 'adminmenuitems', component: AdminMenuItemsComponent },
+  { path: 'adminorders', component: AdminOrdersComponent },
 ];
 
 @NgModule({
