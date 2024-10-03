@@ -10,7 +10,7 @@ import { OrderService } from 'src/app/services/order.service';
   styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent implements OnInit {
-  categories: string[] = ['veg', 'non-veg', 'deserts'];
+  categories: string[] = ['VEG', 'NON_VEG', 'DESSERTS'];
   selectedCategory!: string;
   constructor(
     private router: Router,

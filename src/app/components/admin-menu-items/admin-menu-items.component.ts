@@ -1,6 +1,10 @@
 import { Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from 'src/app/services/api.service';
 import { DataService } from 'src/app/services/data.service';
+import { ItemFormComponent } from '../item-form/item-form.component';
+import { MenuItemDto } from 'src/app/models/models';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-admin-menu-items',
@@ -13,6 +17,8 @@ export class AdminMenuItemsComponent implements OnInit {
   constructor(private apiService : ApiService,
     private dataService :DataService,
     private resolver : ComponentFactoryResolver,
+    private ngbModal : NgbModal,
+    private alertService: AlertService
   ){}
   
   ngOnInit(): void {
@@ -33,7 +39,23 @@ export class AdminMenuItemsComponent implements OnInit {
   onUpdate(item : any){
     // this.apiService.postApi('menuitem',)
     // this.resolver.resolveComponentFactory(item);
-    this.openModal=true;
+    // this.openModal=true;
+    const itemFormComponentRef = this.ngbModal.open(ItemFormComponent, {size :'lg', backdrop:'static'});
+    itemFormComponentRef.componentInstance.itemData = item;
+    itemFormComponentRef.result.then(
+      (res) => {
+        console.log(res);
+        const itemDto = new MenuItemDto(item.menuItemId, parseInt(res.price), res.category, res.name);
+        this.apiService.postApi('menuitem', itemDto).subscribe(
+          (postRes) => {
+            console.log(postRes);
+            this.alertService.showAlert("Menu item updated");
+            this.getMenuItemsfromDb();
+          }
+        );
+      }
+    )
+    .catch((err) => console.log(err))
   }
 
   onDelete(id : number){

@@ -24,6 +24,8 @@ import { CustModalComponent } from './components/cust-modal/cust-modal.component
 import { ItemFormComponent } from './components/item-form/item-form.component';
 import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
 import { LoginUserIntercepterService } from './interceptors/login-user-intercepter.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertComponentComponent } from './components/alert-component/alert-component.component';
 
 @NgModule({
   declarations: [
@@ -45,14 +47,16 @@ import { LoginUserIntercepterService } from './interceptors/login-user-intercept
     AdminMenuItemsComponent,
     CustModalComponent,
     ItemFormComponent,
-    AdminOrdersComponent
+    AdminOrdersComponent,
+    AlertComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [
     {
