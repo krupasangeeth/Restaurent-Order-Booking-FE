@@ -26,6 +26,7 @@ import { AdminOrdersComponent } from './components/admin-orders/admin-orders.com
 import { LoginUserIntercepterService } from './interceptors/login-user-intercepter.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertComponentComponent } from './components/alert-component/alert-component.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { AlertComponentComponent } from './components/alert-component/alert-comp
     CustModalComponent,
     ItemFormComponent,
     AdminOrdersComponent,
-    AlertComponentComponent
+    AlertComponentComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,
