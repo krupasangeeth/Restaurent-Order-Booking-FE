@@ -25,7 +25,8 @@ import { ItemFormComponent } from './components/item-form/item-form.component';
 import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
 import { LoginUserIntercepterService } from './interceptors/login-user-intercepter.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AlertComponentComponent } from './components/alert-component/alert-component.component';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -47,23 +48,31 @@ import { AlertComponentComponent } from './components/alert-component/alert-comp
     AdminMenuItemsComponent,
     CustModalComponent,
     ItemFormComponent,
-    AdminOrdersComponent,
-    AlertComponentComponent
+    AdminOrdersComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ToastrModule.forRoot({
+      timeOut : 5000,
+      positionClass :'toast-top-full-width',
+      tapToDismiss : false,
+      preventDuplicates : false,
+      closeButton : true
+    })
   ],
   providers: [
     {
       provide : HTTP_INTERCEPTORS,
       useClass : LoginUserIntercepterService,
       multi : true
-    }
+    },
+    ToastrService,
   ],
   bootstrap: [AppComponent]
 })

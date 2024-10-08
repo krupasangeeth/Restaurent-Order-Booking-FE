@@ -4,7 +4,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { DataService } from 'src/app/services/data.service';
 import { ItemFormComponent } from '../item-form/item-form.component';
 import { MenuItemDto } from 'src/app/models/models';
-import { AlertService } from 'src/app/services/alert.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-admin-menu-items',
@@ -16,9 +16,8 @@ export class AdminMenuItemsComponent implements OnInit {
   openModal : boolean = false;
   constructor(private apiService : ApiService,
     private dataService :DataService,
-    private resolver : ComponentFactoryResolver,
     private ngbModal : NgbModal,
-    private alertService: AlertService
+    private toastrService : ToastrService
   ){}
   
   ngOnInit(): void {
@@ -49,7 +48,8 @@ export class AdminMenuItemsComponent implements OnInit {
         this.apiService.postApi('menuitem', itemDto).subscribe(
           (postRes) => {
             console.log(postRes);
-            this.alertService.showAlert("Menu item updated");
+            // this.alertService.showAlert("Menu item updated");
+            this.toastrService.info("Menu item updated");
             this.getMenuItemsfromDb();
           }
         );
@@ -64,8 +64,10 @@ export class AdminMenuItemsComponent implements OnInit {
       (res) => {
         this.getMenuItemsfromDb();
         console.log(res)
+        this.toastrService.info("Item Deleted");
       },
-      (err) => console.log(err)
+      (err) => this.toastrService.error("err")
+
     );
 
   }
