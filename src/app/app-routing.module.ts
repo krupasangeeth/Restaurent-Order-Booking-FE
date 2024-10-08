@@ -9,6 +9,8 @@ import { PortalComponent } from './components/portal/portal.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AdminMenuItemsComponent } from './components/admin-menu-items/admin-menu-items.component';
 import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
+import { AdminGaurdService } from './services/admin-gaurd.service';
+import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,10 +18,29 @@ const routes: Routes = [
   { path: 'category', component: CategoryComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'orderstatus', component: OrderStatusComponent },
-  { path: 'portal', component: PortalComponent },
-  { path: 'admindashboard', component: AdminDashboardComponent },
-  { path: 'adminmenuitems', component: AdminMenuItemsComponent },
-  { path: 'adminorders', component: AdminOrdersComponent },
+  {
+    path: 'portal',
+    component: PortalComponent,
+  },
+  {
+    path: 'admindashboard',
+    component: AdminDashboardComponent,
+    canActivate: [AdminGaurdService],
+  },
+  {
+    path: 'adminmenuitems',
+    component: AdminMenuItemsComponent,
+    canActivate: [AdminGaurdService],
+  },
+  {
+    path: 'adminorders',
+    component: AdminOrdersComponent,
+    canActivate: [AdminGaurdService],
+  },
+  {
+    path: '**',
+    component: ErrorComponent,
+  },
 ];
 
 @NgModule({

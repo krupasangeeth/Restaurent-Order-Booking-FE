@@ -28,6 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CustModalComponent,
     ItemFormComponent,
     AdminOrdersComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
