@@ -25,8 +25,8 @@ import { ItemFormComponent } from './components/item-form/item-form.component';
 import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
 import { LoginUserIntercepterService } from './interceptors/login-user-intercepter.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AlertComponentComponent } from './components/alert-component/alert-component.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminMenuItemsComponent,
     CustModalComponent,
     ItemFormComponent,
-    AdminOrdersComponent
+    AdminOrdersComponent,
+    AlertComponentComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,

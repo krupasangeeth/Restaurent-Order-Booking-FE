@@ -1,1 +1,19 @@
-<p>admin-orders works!</p>
+<div class="row">
+  <div
+    class="card bg-success-subtle col col-md-4 col-sm-6 col-lg-3 m-1 h-100"
+    style="min-width: min-content"
+    *ngFor="let order of orders; let i = index"
+    (click)="onOrderClick(order)"
+  >
+    <div class="card-body">
+      <div class="card-title">
+        {{ order.userDto.mobile }}
+      </div>
+      <p class="card-text">{{ order.totalAmount }}</p>
+    </div>
+  </div>
+  <!-- 
+    <app-cust-modal [openModal]="openModal" (closeEvent)="openModal = false">
+        <app-item-form ></app-item-form>
+    </app-cust-modal> -->
+</div>
