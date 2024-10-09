@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
-import { MenuItemDto, OrderDto, OrderItemDto, UserDto, UserRoleDto } from '../models/models';
+import {
+  MenuItemDto,
+  OrderDto,
+  OrderItemDto,
+  UserDto,
+  UserRoleDto,
+} from '../models/models';
 
 export enum ItemStatus {
   YET_TO_PREPARE = 'Yet to prepare',
   BEING_PREPARED = 'Being prepared...',
-  PREPARED = 'Prepared'
+  PREPARED = 'Prepared',
 }
-
-
 
 export class Item {
   menuItemId: number;
@@ -29,7 +33,7 @@ export class Item {
     this.price = price;
     this.category = category;
     this.quantity = quantity;
-    this.itemStatus = itemStatus
+    this.itemStatus = itemStatus;
   }
 }
 
@@ -66,7 +70,14 @@ export class OrderService {
         this.order.items.delete(item.menuItemId);
       }
     } else {
-      orderItem = new Item(item.menuItemId, item.name, item.price, item.category, 1, ItemStatus.YET_TO_PREPARE);
+      orderItem = new Item(
+        item.menuItemId,
+        item.name,
+        item.price,
+        item.category,
+        1,
+        ItemStatus.YET_TO_PREPARE
+      );
       this.order.items.set(item.menuItemId, orderItem);
     }
     this.order.totalAmount += quantity * item.price;
@@ -77,16 +88,29 @@ export class OrderService {
 
   getOrderJson() {
     const items = [...this.order.items.values()];
-    const orderItemsDto : OrderItemDto[] = [];
+    const orderItemsDto: OrderItemDto[] = [];
     items.forEach((item) => {
-      const menuItemDto: MenuItemDto = new MenuItemDto(item.menuItemId,item.price,item.category,item.name);
-      const tempOrderItemDto : OrderItemDto = new OrderItemDto(menuItemDto,item.quantity);
+      const menuItemDto: MenuItemDto = new MenuItemDto(
+        item.menuItemId,
+        item.price,
+        item.category,
+        item.name
+      );
+      const tempOrderItemDto: OrderItemDto = new OrderItemDto(
+        menuItemDto,
+        item.quantity,
+        'YET_TO_PREPARE'
+      );
       orderItemsDto.push(tempOrderItemDto);
-    })
+    });
     // const orderItemDto : OrderItemDto = new OrderItemDto(1,menuItemsDto,this.)
-    const userRoleDto : UserRoleDto =  new UserRoleDto(10001,'ADMIN');
-    const userDto : UserDto = new UserDto(8499858,userRoleDto);
-    const placeorder : OrderDto = new OrderDto(userDto,orderItemsDto,this.order.totalAmount);
+    const userRoleDto: UserRoleDto = new UserRoleDto(10001, 'ADMIN');
+    const userDto: UserDto = new UserDto(8499858, userRoleDto);
+    const placeorder: OrderDto = new OrderDto(
+      userDto,
+      orderItemsDto,
+      this.order.totalAmount
+    );
     console.log(placeorder);
     return placeorder;
     // return {items,totalAmount: this.order.totalAmount, grandTotal: this.order.grandTotal };

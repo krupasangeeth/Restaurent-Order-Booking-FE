@@ -1,4 +1,4 @@
-<div class="container m-2">
+<div class="container my-2">
   <div class="d-flex justify-content-between">
     <p class="fw-bold">Order Id : {{ order.orderId }}</p>
     <p class="text-success fw-bold">Mobile : {{ order.userDto.mobile }}</p>
@@ -9,15 +9,57 @@
         <th>Item</th>
         <th>Quantity</th>
         <th>Cost</th>
+        <th class="text-center">Status</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of order.orderItemsDto">
+      <tr *ngFor="let item of order.orderItemsDto; let i = index">
         <td>{{ item.menuItemDto.name }}</td>
         <td>{{ item.quantity }}</td>
         <td>
           {{ item.quantity }} &#8277; {{ item.menuItemDto.price }} = &#8377;
           {{ item.quantity * item.menuItemDto.price }}
+        </td>
+        <td class="text-center">
+          <div
+            class="btn-group btn-group-sm"
+            role="group"
+            aria-label="Basic radio toggle button group"
+          >
+            <input
+              type="radio"
+              class="btn-check"
+              [name]="'btnradio-' + i"
+              [id]="i + '-1'"
+              autocomplete="off"
+              checked
+            />
+            <label class="btn btn-outline-danger" [for]="i + '-1'"
+              >Yet to prepare</label
+            >
+
+            <input
+              type="radio"
+              class="btn-check btn-warning"
+              [name]="'btnradio-' + i"
+              [id]="i + '-2'"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-warning" [for]="i + '-2'"
+              >Preparing</label
+            >
+
+            <input
+              type="radio"
+              class="btn-check"
+              [name]="'btnradio-' + i"
+              [id]="i + '-3'"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-success" [for]="i + '-3'"
+              >Served</label
+            >
+          </div>
         </td>
       </tr>
       <tr>
