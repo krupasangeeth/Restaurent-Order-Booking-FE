@@ -11,31 +11,45 @@ import { AdminMenuItemsComponent } from './components/admin-menu-items/admin-men
 import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
 import { AdminGaurdService } from './services/admin-gaurd.service';
 import { ErrorComponent } from './components/error/error.component';
+import { LoginGaurdService } from './services/login-gaurd.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'menu', component: MenuComponent },
-  { path: 'category', component: CategoryComponent },
-  { path: 'payment', component: PaymentComponent },
-  { path: 'orderstatus', component: OrderStatusComponent },
+  { path: 'menu', component: MenuComponent, canActivate: [LoginGaurdService] },
+  {
+    path: 'category',
+    component: CategoryComponent,
+    canActivate: [LoginGaurdService],
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent,
+    canActivate: [LoginGaurdService],
+  },
+  {
+    path: 'orderstatus',
+    component: OrderStatusComponent,
+    canActivate: [LoginGaurdService],
+  },
   {
     path: 'portal',
     component: PortalComponent,
+    canActivate: [LoginGaurdService],
   },
   {
     path: 'admindashboard',
     component: AdminDashboardComponent,
-    canActivate: [AdminGaurdService],
+    canActivate: [LoginGaurdService, AdminGaurdService],
   },
   {
     path: 'adminmenuitems',
     component: AdminMenuItemsComponent,
-    canActivate: [AdminGaurdService],
+    canActivate: [LoginGaurdService, AdminGaurdService],
   },
   {
     path: 'adminorders',
     component: AdminOrdersComponent,
-    canActivate: [AdminGaurdService],
+    canActivate: [LoginGaurdService, AdminGaurdService],
   },
   {
     path: '**',

@@ -33,6 +33,7 @@
               [id]="i + '-1'"
               autocomplete="off"
               checked
+              (click)="onOrderStausChange('YET_TO_PREPARE', i)"
             />
             <label class="btn btn-outline-danger" [for]="i + '-1'"
               >Yet to prepare</label
@@ -44,6 +45,7 @@
               [name]="'btnradio-' + i"
               [id]="i + '-2'"
               autocomplete="off"
+              (click)="onOrderStausChange('PREPARING', i)"
             />
             <label class="btn btn-outline-warning" [for]="i + '-2'"
               >Preparing</label
@@ -55,6 +57,7 @@
               [name]="'btnradio-' + i"
               [id]="i + '-3'"
               autocomplete="off"
+              (click)="onOrderStausChange('SERVED', i)"
             />
             <label class="btn btn-outline-success" [for]="i + '-3'"
               >Served</label
