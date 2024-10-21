@@ -17,12 +17,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of order.items.values()">
-          <td>{{ item.name }}</td>
+        <tr *ngFor="let item of order.orderItemsDto">
+          <td>{{ item.menuItemDto.name }}</td>
           <td>{{ item.quantity }}</td>
           <td>
-            {{ item.quantity }} &#8277; {{ item.price }} = &#8377;
-            {{ item.quantity * item.price }}
+            {{ item.quantity }} &#8277; {{ item.menuItemDto.price }} = &#8377;
+            {{ item.quantity * item.menuItemDto.price }}
           </td>
         </tr>
         <tr>

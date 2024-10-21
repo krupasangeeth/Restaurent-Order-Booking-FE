@@ -17,12 +17,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of order.items.values()">
-          <td>{{ item.name }}</td>
+        <tr *ngFor="let item of order.orderItemsDto">
+          <td>{{ item.menuItemDto.name }}</td>
           <td>{{ item.quantity }}</td>
           <!-- <td [ngClass]="getStatusClass(item.itemStatus)">{{item.itemStatus}}</td> -->
-          <td [ngClass]="getStatusClass(item.itemStatus)">
-            {{ item.itemStatus }}
+          <td [ngClass]="getStatusClass(item.status)">
+            {{ item.status }}
           </td>
         </tr>
       </tbody>

@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs';
+import { OrderDto } from 'src/app/models/models';
 import { ApiService } from 'src/app/services/api.service';
-import { Order, OrderService } from 'src/app/services/order.service';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-payment',
@@ -11,17 +12,17 @@ import { Order, OrderService } from 'src/app/services/order.service';
   styleUrls: ['./payment.component.css'],
 })
 export class PaymentComponent {
-  order: Order;
+  order: OrderDto;
   constructor(private orderService: OrderService, private router: Router, private httpClient: HttpClient, private apiService: ApiService) {
     this.order = this.orderService.getOrder();
   }
 
   getGST(): string {
-    return (this.order.totalAmount * 0.07).toFixed(2);
+    return (this.order.totalAmount - (this.order.totalAmount / 1.07) ).toFixed(2);
   }
 
   getGrandTotal() {
-    return (this.order.grandTotal).toFixed(2);
+    return (this.order.totalAmount).toFixed(2);
   }
 
   onAddMoreItems() {

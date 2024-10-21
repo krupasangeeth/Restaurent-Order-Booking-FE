@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { WebSocketMessage } from 'rxjs/internal/observable/dom/WebSocketSubject';
 import { WebSocketSubject } from 'rxjs/webSocket';
+import { ItemStatus, OrderDto } from 'src/app/models/models';
 import { ApiService } from 'src/app/services/api.service';
 import { OrderStatusWebsocketService } from 'src/app/services/order-status-websocket.service';
-import {
-  ItemStatus,
-  Order,
-  OrderService,
-} from 'src/app/services/order.service';
+import { OrderService } from 'src/app/services/order.service';
+import { MyWebSocketMessage } from '../order-details/order-details.component';
 
 @Component({
   selector: 'app-order-status',
@@ -15,7 +13,7 @@ import {
   styleUrls: ['./order-status.component.css'],
 })
 export class OrderStatusComponent implements OnInit {
-  order: Order;
+  order: OrderDto;
   socket$!: WebSocketSubject<any>;
   constructor(
     private orderService: OrderService,
@@ -28,10 +26,11 @@ export class OrderStatusComponent implements OnInit {
     // this.dbService.getApi('order/b65a').subscribe()
     this.socket$ = this.soc.establishConnection();
     this.socket$.subscribe(
-      (msg: any) => {
+      (msg: MyWebSocketMessage) => {
         console.log('received ' + msg);
         console.log(
-          this.order.items.get(msg['orderItemId'].toString()) + 'items'
+          // this.order.orderItemsDto.get(msg['orderItemId'].toString()) + 'items'
+          msg
         );
         // console.log(msg['orderItemId'] + 'id');
         // const orderItem: any = this.order.items.get(msg['orderItemId']);
@@ -45,7 +44,7 @@ export class OrderStatusComponent implements OnInit {
     );
   }
 
-  getStatusClass(itemStatus: ItemStatus) {
+  getStatusClass(itemStatus: string) {
     let itemStatusClass: string[] = [];
     switch (itemStatus) {
       case ItemStatus.YET_TO_PREPARE:
@@ -54,12 +53,12 @@ export class OrderStatusComponent implements OnInit {
       case ItemStatus.BEING_PREPARED:
         itemStatusClass = ['text-warning', 'fw-bold'];
         break;
-      case ItemStatus.PREPARED:
+      case ItemStatus.SERVED:
         itemStatusClass = ['text-success', 'fw-bold'];
         break;
     }
     return itemStatusClass;
   }
 
-  orderStatus = 'yet to prepare';
+  // orderStatus = 'yet to prepare';
 }

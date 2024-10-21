@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from 'src/app/services/api.service';
-import { Order } from 'src/app/services/order.service';
 import { OrderDetailsComponent } from '../order-details/order-details.component';
 import { WebSocketSubject } from 'rxjs/webSocket';
 import { OrderStatusWebsocketService } from 'src/app/services/order-status-websocket.service';

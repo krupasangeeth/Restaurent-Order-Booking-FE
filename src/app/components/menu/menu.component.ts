@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { MenuItemDto, OrderDto, OrderItemDto } from 'src/app/models/models';
 import { ApiService } from 'src/app/services/api.service';
 import { DataService } from 'src/app/services/data.service';
 import { OrderService } from 'src/app/services/order.service';
@@ -30,8 +31,10 @@ constructor(private activatedRoute: ActivatedRoute,
   
 }
 
-getQuantityFromOrder(item : any){
-  const orderedItem = this.orderService.getOrder().items.get(item.menuItemId);
+getQuantityFromOrder(menuItem : MenuItemDto){
+  const orderedItem = this.orderService.getOrder().orderItemsDto
+  // .get(item.menuItemId);
+  .find((orderItem : OrderItemDto) => orderItem.menuItemDto.menuItemId == menuItem.menuItemId );
   return orderedItem ? orderedItem.quantity : 0;
 }
 
@@ -39,8 +42,8 @@ ngOnInit(): void {
   
 }
 
-onQuantityChange(e:number, item:any) {
-  this.orderService.updateOrder(item,e);
+onQuantityChange(e:number, menuItem:MenuItemDto) {
+  this.orderService.updateOrder(menuItem,e);
 }
 
 }
